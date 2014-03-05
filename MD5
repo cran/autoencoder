@@ -1,0 +1,14 @@
+506beeeb3d3a82310714737aa2458f44 *DESCRIPTION
+8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
+12534be0d302220cb50701c63d7714fa *R/autoencoder.R
+d782c65916980b3624abcee682c91b67 *data/autoencoder_Ninput=100_Nhidden=100_rho=1e-2.rda
+d9908e7ffb0ae5acc9aab6eab355e2c1 *data/autoencoder_Ninput=100_Nhidden=25_rho=1e-2.rda
+50c098af7d02f5c04bd4b693771e17c4 *data/datalist
+539003f85a3fe138aa0db76f6d875d10 *data/training_matrix_N=5e3_Ninput=100.rda
+580033035933f94732effa61d7d76176 *man/autoencode.Rd
+54a0e8337f6640a8322aad5cd8670210 *man/autoencoder-package.Rd
+be33d6f3229ff90dbda07aa3a6158502 *man/autoencoder_Ninput=100_Nhidden=100_rho=1e-2.Rd
+13de27444c50ef44a5429f004fed606e *man/autoencoder_Ninput=100_Nhidden=25_rho=1e-2.Rd
+179cb5436f44b7cc5d1b2168745a8f16 *man/predict.autoencoder.Rd
+6cd612ba56d1a4cb26a8b4491cedfb95 *man/training_matrix_N=1e4_Ninput=100.Rd
+6dc1865fe31e290628929e23a8f3a2ae *man/visualize.hidden.units.Rd

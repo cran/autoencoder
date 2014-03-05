@@ -1,0 +1,3 @@
+autoencoder_Ninput=100_Nhidden=25_rho=1e-2: autoencoder.object
+autoencoder_Ninput=100_Nhidden=100_rho=1e-2: autoencoder.object
+training_matrix_N=5e3_Ninput=100: training.matrix
