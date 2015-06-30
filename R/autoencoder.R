@@ -305,11 +305,11 @@ autoencode <- function(X.train,X.test=NULL,nl=3,N.hidden,unit.type=c("logistic",
       X.test.rescaled <- rescale(X.in=X.test,X.in.min=training.matrix.min,X.in.max=training.matrix.max,
                      unit.type=unit.type,offset=rescaling.offset)$X.rescaled
       X.output <- feedforward.pass.matrix(W,b,X.test.rescaled)$a[[nl]]
-      X.output <- rescale.back(X.in=X.output,X.in.min=training.matrix.min,X.in.max=training.matrix.max,unit.type)
+      X.output <- rescale.back(X.in=X.output,X.in.min=training.matrix.min,X.in.max=training.matrix.max,unit.type,offset=rescaling.offset)$X.rescaled
     } else {
       X.output <- feedforward.pass.matrix(W,b,X.test)$a[[nl]]
-      test.set.error <- mean(rowSums((X.output - X.test)^2))    #average, over X.test rows, sum of squares of (X.output-X.test)
     }
+      test.set.error <- mean(rowSums((X.output - X.test)^2))    #average, over X.test rows, sum of squares of (X.output-X.test)
   } else test.set.error <- NULL
   
   
@@ -432,7 +432,12 @@ predict.autoencoder <- function(object,X.input=NULL,hidden.output=c(F,T),...){
     
   }
   if (hidden.output==TRUE) {
-    X.output <- feedforward.pass.matrix(W,b,X.input)$a[[nl-1]]  #calculate hidden layer output matrix (rows correspond to outputs calculated from input examples)
+    # rescale X.input using rescaling.min and rescaling.max used with the trained network 
+    # (so that the records in X.input identical to those in training.matrix used to train the autoencoder, remain identical after rescaling to the corresponding ones in the rescaled training.matrix):
+    if (rescale.flag){
+      X.input.rescaled <- rescale(X.in=X.input,X.in.min=rescaling.min,X.in.max=rescaling.max,unit.type=unit.type,offset=rescaling.offset)$X.rescaled
+      X.output <- feedforward.pass.matrix(W,b,X.input.rescaled)$a[[nl-1]]  #calculate hidden layer output matrix (rows correspond to outputs calculated from rescaled input examples)
+    } else X.output <- feedforward.pass.matrix(W,b,X.input)$a[[nl-1]]  #calculate hidden layer output matrix (rows correspond to outputs calculated from input examples)
     mean.error <- NULL
   }
   

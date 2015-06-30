@@ -1,6 +1,6 @@
-506beeeb3d3a82310714737aa2458f44 *DESCRIPTION
-8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-12534be0d302220cb50701c63d7714fa *R/autoencoder.R
+364cb145e667e55de65e2733d1cad4de *DESCRIPTION
+9dcd56e53e090c90648bb53c9ed18bcf *NAMESPACE
+a4e81023e2d7d7746d8e9d58fff92445 *R/autoencoder.R
 d782c65916980b3624abcee682c91b67 *data/autoencoder_Ninput=100_Nhidden=100_rho=1e-2.rda
 d9908e7ffb0ae5acc9aab6eab355e2c1 *data/autoencoder_Ninput=100_Nhidden=25_rho=1e-2.rda
 50c098af7d02f5c04bd4b693771e17c4 *data/datalist
